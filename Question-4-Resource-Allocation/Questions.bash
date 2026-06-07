@@ -1,18 +1,18 @@
-# Question
-# You are managing a WordPress application running in a Kubernetes cluster
-# Your task is to adjust the Pod resource requests and limits to ensure stable operation
+# 题目
+# 你正在管理一个运行在 Kubernetes 集群中的 WordPress 应用。
+# 你的任务是调整 Pod 的资源 requests 和 limits，以确保应用稳定运行。
 
-# Tasks
-# 1. Scale down the wordpress deployment to 0 replicas
-# 2. Edit the deployment and divide the node resource evenly across all 3 pods
-# 3. Assign fair and equal CPU and memory to each Pod
-# 4. Add sufficient overhead to avoid node instability
-# Ensure both the init containers and the main containers use exactly the same resource requests and limits
-# After making the changes scale the deployment back to 3 replicas
+# 任务
+# 1. 将 wordpress deployment 缩容到 0 个副本
+# 2. 编辑 deployment，将节点资源在 3 个 Pod 之间平均分配
+# 3. 为每个 Pod 分配公平且相等的 CPU 和内存
+# 4. 预留足够的资源余量，避免节点不稳定
+# 确保 init container 和主容器使用完全相同的 resource requests 和 limits。
+# 完成修改后，将 deployment 扩容回 3 个副本。
 
-#Video link - https://youtu.be/ZqGDdETii8c
+# 视频链接 - https://youtu.be/ZqGDdETii8c
 
-#Documentation Reference
-# Tip: Navigate the documentation manually to build familiarity with its structure
+# 文档参考
+# 提示：手动浏览文档以熟悉其结构
 # Concepts -> Configuration -> Resource Management for Pods and Containers
 # https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/

@@ -1,16 +1,16 @@
-# Question HPA
-# Create a new HorizontalPodAutoScaler(HPA) named apache-server in the autoscale namespace
+# 题目：HPA
+# 在 autoscale 命名空间中创建一个名为 apache-server 的 HorizontalPodAutoScaler（HPA）
 
-# Task
-# 1. The HPA must target the existing deployment called apache-deployment in the autoscale namespace
-# 2. Set the HPA to target for 50% CPU usage per Pod
-# 3. Configure the HPA to have a minimum of 1 pod and a maximum of 4 pods
-# 4. Set the downscale stabilization window to 30 seconds
+# 任务
+# 1. HPA 必须以 autoscale 命名空间中已有的 apache-deployment deployment 为目标
+# 2. 将 HPA 的目标设置为每个 Pod 50% CPU 使用率
+# 3. 配置 HPA 最少 1 个 Pod，最多 4 个 Pod
+# 4. 将缩容稳定窗口设置为 30 秒
 
-# Video Link - https://youtu.be/YGkARVFKtmM
+# 视频链接 - https://youtu.be/YGkARVFKtmM
 
-#Documentation Reference
-# Tip: Navigate the documentation manually to build familiarity with its structure
+# 文档参考
+# 提示：手动浏览文档以熟悉其结构
 # (hpa) Tasks -> Run Application -> HorizontalPodAutoscaling Walkthrough
 # https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
 # (downscale) Concepts -> Workloads -> Horizontal Pod Autoscaling

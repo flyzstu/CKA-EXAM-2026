@@ -1,9 +1,9 @@
-# Question CRDs
+# 题目：CRDs
 
-#Task
-# 1. Create a list of all cert-manager [CRDs] and save it to /root/resources.yaml
-# 2. Using kubectl extract the documentation for the subject specification field of the Certifciate
-# Custom Resource and save it to /root/subject.yaml
-# You may use any output format that kubectl supports
+# 任务
+# 1. 创建所有 cert-manager CRDs 的列表，并保存到 /root/resources.yaml
+# 2. 使用 kubectl 提取 Certificate Custom Resource 中 subject 规格字段的文档，
+# 并保存到 /root/subject.yaml
+# 你可以使用 kubectl 支持的任意输出格式
 
-# Video Link - https://youtu.be/SA1DzLQaDJs
+# 视频链接 - https://youtu.be/SA1DzLQaDJs

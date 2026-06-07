@@ -1,10 +1,9 @@
-# Question 19: WordPress Deployment — Properly Size Resource Requests
+# 题目 19：WordPress Deployment - 正确设置 Resource Requests
 
-# SCENARIO:
-# A WordPress deployment in namespace 'relative-fawn' has 3 replicas.
+# 场景：
+# relative-fawn 命名空间中有一个 WordPress deployment，包含 3 个副本。
 
-# TASK:
-# Edit the WordPress deployment so that each pod's resource requests
-# equally divide the node's available resources among the 3 replicas.
-# Limits do not need to be changed.
-
+# 任务：
+# 编辑 WordPress deployment，使每个 Pod 的 resource requests
+# 在 3 个副本之间平均分配节点的可用资源。
+# 不需要修改 limits。

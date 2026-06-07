@@ -1,10 +1,10 @@
-# Question:
-# There are two deployments, Frontend and Backend
-# Frontend is in the frontend namespace, Backend is in the backend namespace
+# 题目：
+# 集群中有两个 deployment：Frontend 和 Backend。
+# Frontend 位于 frontend 命名空间，Backend 位于 backend 命名空间。
 
-# Task
-# Look at the Network Policy YAML files in /root/network-policies
-# Decide which of the policies provides the functionality to allow interaction between the
-# frontend and the backend deployments in the least permissive way and deploy that yaml
+# 任务
+# 查看 /root/network-policies 中的 NetworkPolicy YAML 文件。
+# 判断哪一个策略能以最小权限方式允许 frontend 和 backend deployment 之间交互，
+# 并部署该 YAML。
 
-# Video Link - https://youtu.be/rA8mXYTU0W8
+# 视频链接 - https://youtu.be/rA8mXYTU0W8

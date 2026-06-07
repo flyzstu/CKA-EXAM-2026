@@ -1,9 +1,9 @@
-# Question
-# There is a deployment named nodeport-deployment in the relative namespace
+# 题目
+# relative 命名空间中有一个名为 nodeport-deployment 的 deployment。
 
-# Tasks:
-# 1. Configure the deployment so it can be exposed on port 80, name=http, protocol TCP
-# 2. Create a new Service named nodeport-service exposing the container port 80, protocol TCP, Node Port 30080
-# 3. Configure the new Service to also expose the individual pods using NodePort
+# 任务：
+# 1. 配置该 deployment，使其可通过端口 80 暴露，name=http，protocol TCP
+# 2. 创建一个名为 nodeport-service 的新 Service，暴露容器端口 80，protocol TCP，NodePort 30080
+# 3. 配置新的 Service，使其也可以通过 NodePort 暴露各个 Pod
 
-# Video Link
+# 视频链接

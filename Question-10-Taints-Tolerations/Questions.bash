@@ -1,12 +1,13 @@
-# Question: Taints & Tolerances
+# 题目：污点与容忍
 
-# Tasks:
-# 1. Add a taint to node01 so tht no normal pods can be scheduled in this node. key=PERMISSION, value=granted, Type=NoSchedule
-# 2. Schedule a Pod on node01 adding the correct toleration to the spec so it can be deployed
+# 任务：
+# 1. 给 node01 添加一个 taint，使普通 Pod 无法调度到该节点。
+#    key=PERMISSION，value=granted，Type=NoSchedule
+# 2. 调度一个 Pod 到 node01，并在 spec 中添加正确的 toleration，使其可以部署
 
-# Video Link - https://youtu.be/oy6Mdqt1-jk
+# 视频链接 - https://youtu.be/oy6Mdqt1-jk
 
-#Documentation Reference
-# Tip: Navigate the documentation manually to build familiarity with its structure
+# 文档参考
+# 提示：手动浏览文档以熟悉其结构
 # Concepts -> Scheduling, Preemption and Eviction -> Taints and Tolerations
 # https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/

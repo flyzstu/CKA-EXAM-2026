@@ -1,13 +1,13 @@
-# Question: Cri-Dockerd
+# 题目：Cri-Dockerd
 
-# Task:
-# Set up cri-dockerd
-# Install the debian package ~/cri-dockerd.deb using dpkg
-# Enable and start the cri-docker service
-# Configure these parameters:
-# 1. Set net.bridge.bridge-nf-call-iptables to 1
-# 2. Set net.ipv6.conf.all.forwarding to 1
-# 3. Set net.ipv4.ip_forward to 1
-# 4. Set net.netfilter.nf_conntrack_max to 131072
+# 任务：
+# 配置 cri-dockerd。
+# 使用 dpkg 安装 Debian 包 ~/cri-dockerd.deb。
+# 启用并启动 cri-docker 服务。
+# 配置以下参数：
+# 1. 将 net.bridge.bridge-nf-call-iptables 设置为 1
+# 2. 将 net.ipv6.conf.all.forwarding 设置为 1
+# 3. 将 net.ipv4.ip_forward 设置为 1
+# 4. 将 net.netfilter.nf_conntrack_max 设置为 131072
 
-# Video Link - https://youtu.be/ybzo1vXiqjU
+# 视频链接 - https://youtu.be/ybzo1vXiqjU
