@@ -1,16 +1,39 @@
 # CKA 练习题（简化版）
 
-这是一套来自 CKA-PREP 播放列表的 CKA 实战练习题。每道题都放在独立目录中，并包含以下 bash 文件：
+这是一套来自 CKA-PREP 播放列表的 CKA 实战练习题，每道题位于独立目录中，配有环境初始化、验证和清理脚本。
 
-**注意：** 这是一个持续维护中的仓库，可能仍然存在问题或不完善之处。如果你发现问题，尤其是实验环境初始化或验证脚本中的问题，请提交 issue，方便修复。
+**注意：** 这是一个持续维护中的仓库，可能仍然存在问题或不完善之处。如果你发现问题，尤其是实验环境初始化或验证脚本中的问题，请在 [Issues](https://github.com/flyzstu/CKA-EXAM-2026/issues) 中提交，方便修复。
 
 **备考说明：** 这些题目设计上接近 CKA 考试风格，但并不是考试原题。请深入理解底层概念，并尝试不同场景，这样才能在考试环境中应对变体题。
 
-- `LabSetUp.bash` — 为题目准备实验环境。
-- `Questions.bash` — 题目场景说明以及对应的 YouTube 讲解链接。
-- `SolutionNotes.bash` — 需要提示时可参考的分步解法。
-- `validate.bash` — 自动验证你的解法是否正确。
-- `cleanup.bash` — 清理并删除本题创建的资源。
+## 前置条件
+
+- **Kubernetes 集群**（v1.28+）或 [Killercoda CKA Playground](https://killercoda.com/playgrounds/scenario/cka)
+- **kubectl**（已配置 kubeconfig 并能访问集群）
+- **bash** 5.0+
+- **Git**
+
+---
+
+## 目录结构
+
+每道题位于独立的 `Question-<编号>-<主题>/` 目录下，文件组成如下：
+
+```
+Question-<编号>-<主题>/
+├── LabSetUp.bash        # 初始化实验环境（由 run-question.sh 调用）
+├── Questions.bash       # 题目场景说明 + YouTube 讲解链接 + 文档参考
+├── SolutionNotes.bash   # 分步解法（需要提示时参考）
+├── validate.bash        # 自动验证解法（由 validate-question.sh 调用）
+├── cleanup.bash         # 清理资源（由 cleanup-question.sh 调用）
+└── *.yaml               # 题目相关的 Kubernetes 资源清单（部分题目有）
+
+scripts/
+├── run-question.sh      # 运行指定题目的初始化脚本
+├── validate-question.sh # 验证指定题目或全部题目
+├── cleanup-question.sh  # 清理指定题目的资源
+└── install-codium.sh    # 安装 VSCodium（可选）
+```
 
 ---
 
@@ -19,8 +42,8 @@
 1. 启动 [Killercoda CKA playground](https://killercoda.com/playgrounds/scenario/cka)，或使用你自己的 Kubernetes 集群。
 2. 在实验环境中克隆本仓库：
    ```bash
-   git clone https://github.com/markdjones82/CKA-PREP-2025-v2.git ~/CKA-PREP-2025-v2
-   cd ~/CKA-PREP-2025-v2
+   git clone https://github.com/flyzstu/CKA-EXAM-2026.git ~/CKA-EXAM-2026
+   cd ~/CKA-EXAM-2026
    ```
 3. 按题号运行题目初始化脚本：
    ```bash
@@ -75,7 +98,7 @@ scripts/install-codium.sh
 ### 启动 VSCodium
 安装完成后，在仓库目录中启动：
 ```bash
-cd ~/CKA-PREP-2025-v2
+cd ~/CKA-EXAM-2026
 codium --no-sandbox --user-data-dir .
 ```
 
@@ -85,24 +108,24 @@ codium --no-sandbox --user-data-dir .
 
 ## 题目列表
 
-| # | 主题 | 视频 |
-|---|-------|-------|
-| 1 | MariaDB — 持久卷 | https://youtu.be/aXvvc1EB1zg |
-| 2 | ArgoCD — 通过 Helm 安装（不安装 CRDs） | https://youtu.be/e0YGRSjb8CU |
-| 3 | Sidecar 容器 | https://youtu.be/3xraEGGQJDY |
-| 4 | 资源分配 | https://youtu.be/ZqGDdETii8c |
-| 5 | HPA — HorizontalPodAutoscaler | https://youtu.be/YGkARVFKtmM |
-| 6 | CRDs — cert-manager | https://youtu.be/SA1DzLQaDJs |
-| 7 | PriorityClass | https://youtu.be/CZzxGyF6OHc |
-| 8 | CNI 与 NetworkPolicy | https://youtu.be/Uc04Ui4x3EM |
-| 9 | cri-dockerd | https://youtu.be/ybzo1vXiqjU |
-| 10 | 污点与容忍 | https://youtu.be/oy6Mdqt1-jk |
-| 11 | Gateway API | https://youtu.be/G9zispvOCHE |
-| 12 | Ingress | https://youtu.be/sy9zABvDedQ |
-| 13 | NetworkPolicy | https://youtu.be/rA8mXYTU0W8 |
-| 14 | StorageClass | https://youtu.be/di7X7OHn2fc |
-| 15 | Etcd 修复 | https://youtu.be/IL448T6r8H4 |
-| 16 | NodePort Service | - |
-| 17 | TLS 配置 | - |
-| 18 | kubectl patch — 资源限制 | - |
-| 19 | 资源分配 v2 — Pod 调度 | - |
+| # | 主题 | 目录 | 视频 |
+|---|-------|------|-------|
+| 1 | MariaDB — 持久卷 | [Question-1-MariaDB-Persistent-volume](Question-1-MariaDB-Persistent-volume/) | https://youtu.be/aXvvc1EB1zg |
+| 2 | ArgoCD — 通过 Helm 安装（不安装 CRDs） | [Question-2-ArgoCD](Question-2-ArgoCD/) | https://youtu.be/e0YGRSjb8CU |
+| 3 | Sidecar 容器 | [Question-3-Sidecar](Question-3-Sidecar/) | https://youtu.be/3xraEGGQJDY |
+| 4 | 资源分配 | [Question-4-Resource-Allocation](Question-4-Resource-Allocation/) | https://youtu.be/ZqGDdETii8c |
+| 5 | HPA — HorizontalPodAutoscaler | [Question-5-HPA](Question-5-HPA/) | https://youtu.be/YGkARVFKtmM |
+| 6 | CRDs — cert-manager | [Question-6-CRDs](Question-6-CRDs/) | https://youtu.be/SA1DzLQaDJs |
+| 7 | PriorityClass | [Question-7-PriorityClass](Question-7-PriorityClass/) | https://youtu.be/CZzxGyF6OHc |
+| 8 | CNI 与 NetworkPolicy | [Question-8-CNI-Network-Policy](Question-8-CNI-Network-Policy/) | https://youtu.be/Uc04Ui4x3EM |
+| 9 | cri-dockerd | [Question-9-Cri-Dockerd](Question-9-Cri-Dockerd/) | https://youtu.be/ybzo1vXiqjU |
+| 10 | 污点与容忍 | [Question-10-Taints-Tolerations](Question-10-Taints-Tolerations/) | https://youtu.be/oy6Mdqt1-jk |
+| 11 | Gateway API | [Question-11-Gateway-API](Question-11-Gateway-API/) | https://youtu.be/G9zispvOCHE |
+| 12 | Ingress | [Question-12-Ingress](Question-12-Ingress/) | https://youtu.be/sy9zABvDedQ |
+| 13 | NetworkPolicy | [Question-13-Network-Policy](Question-13-Network-Policy/) | https://youtu.be/rA8mXYTU0W8 |
+| 14 | StorageClass | [Question-14-Storage-Class](Question-14-Storage-Class/) | https://youtu.be/di7X7OHn2fc |
+| 15 | Etcd 修复 | [Question-15-Etcd-Fix](Question-15-Etcd-Fix/) | https://youtu.be/IL448T6r8H4 |
+| 16 | NodePort Service | [Question-16-NodePort](Question-16-NodePort/) | - |
+| 17 | TLS 配置 | [Question-17-TLS-Config](Question-17-TLS-Config/) | - |
+| 18 | kubectl patch — 资源限制 | [Question-18-Kubectl-Patch](Question-18-Kubectl-Patch/) | - |
+| 19 | 资源分配 v2 — Pod 调度 | [Question-19-Resource-Allocation-v2](Question-19-Resource-Allocation-v2/) | - |
